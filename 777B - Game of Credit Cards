@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define MOD int(1e8)
+#define mp make_pair
+#define pb push_back
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    cin>>n;
+    string a,b;
+    cin>>a>>b;
+    sort(a.begin(),a.end());
+    sort(b.begin(),b.end());
+
+    int k=0,d=0;
+    for(int i=0;i<n;i++)
+    {
+        if(b[i]>=a[k]) k++;
+    }
+    int j=0;
+    for(int i=0;i<n;i++)
+    {
+        if(b[i]>a[j]) j++;
+    }
+    cout<<n-k<<"\n"<<j;
+
+    return 0;
+}
